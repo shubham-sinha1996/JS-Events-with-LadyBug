@@ -141,7 +141,7 @@ const turnRight = () => {
   xPos < 450 && (xPos += 10);
   transform();
 };
-const turnTop = () => {
+const turnUp = () => {
   yPos > 0 && (yPos -= 10);
   transform();
 };
@@ -165,10 +165,41 @@ const turnAntiClockwise = () => {
 rightBtn.addEventListener('click', turnRight);
 leftBtn.addEventListener('click', turnLeft);
 downBtn.addEventListener('click', turnDown);
-upBtn.addEventListener('click', turnTop);
+upBtn.addEventListener('click', turnUp);
 homeBtn.addEventListener('click', home);
 turnAntiClockwiseBtn.addEventListener('click', turnAntiClockwise);
 turnClockwiseBtn.addEventListener('click', turnClockWise);
+document.addEventListener('keydown', function (evt) {
+  const {
+    key
+  } = evt;
+  switch (key) {
+    case 'ArrowLeft':
+      turnLeft();
+      break;
+    case 'ArrowRight':
+      turnRight();
+      break;
+    case 'ArrowUp':
+      turnUp();
+      break;
+    case 'ArrowDown':
+      turnDown();
+      break;
+    case 'c':
+    case 'C':
+      turnClockWise();
+      break;
+    case 'a':
+    case 'A':
+      turnAntiClockwise();
+      break;
+    case 'H':
+    case 'h':
+      home();
+      break;
+  }
+});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -194,7 +225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49671" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50076" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
